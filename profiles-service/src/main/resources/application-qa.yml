@@ -1,0 +1,5 @@
+welcome: QA welcome
+sendoff: QA send off
+
+server:
+  port: 8084

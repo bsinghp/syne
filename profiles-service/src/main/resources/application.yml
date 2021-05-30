@@ -1,0 +1,6 @@
+welcome: Default welcome
+sendoff: Default send off
+
+#spring:
+#  profiles:
+#    active: prod

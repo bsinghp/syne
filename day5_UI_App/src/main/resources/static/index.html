@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			let getSquare = () => {
+				let number = $("#number").val();
+				let url = "/square/" + number;
+				$.ajax({
+					url,
+					method: "POST",
+					success(response) {
+						$("#results").text(`Square: ${response}`);
+					},
+					error(xhr) {
+						$("#results").text("Error occurred");
+					}
+				});
+			};
+			let getCube = () => {
+				let number = $("#number").val();
+				let url = "/cube/" + number;
+				$.ajax({
+					url,
+					method: "POST",
+					success(response) {
+						$("#results").text(`Cube: ${response}`);
+					},
+					error(xhr) {
+						$("#results").text("Error occurred");
+					}
+				});
+			
+			};
+		
+			$(document).ready(() => {
+				$("#squarebtn").on("click", getSquare);
+				$("#cubebtn").on("click", getCube);
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="number" placeholder="Enter your number" id="number"> <br/>
+		<button type="button" id="squarebtn">Square</button>
+		<button type="button" id="cubebtn">Cube</button>
+		<h2 id="results"></h2>
+	</body>
+</html>

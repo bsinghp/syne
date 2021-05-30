@@ -1,0 +1,9 @@
+welcome: Dev welcome
+sendoff: Dev send off
+
+#spring:
+#  profiles:
+#    active: prod
+
+server:
+  port: 8082

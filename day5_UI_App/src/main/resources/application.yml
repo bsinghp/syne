@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: ui-app
+server:
+  port: 8080
+  
+resilience4j:
+  circuitbreaker:
+    instances:
+      squarecircuit:
+        minimum-number-of-calls: 3
+
+#math:
+# service:
+#  base:
+#   url: http://localhost:8081/math
+#  square:
+#   url: /square
+#  cube:
+#   url: /cube
+
+math:
+ service:
+  base:
+   url: http://localhost:7000
+  square:
+   url: /sq
+  cube:
+   url: /cu
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka   
+#   enabled: false
+
+#-Deureka.client.enabled=false
+
+mathdb:
+ service:
+  url: http://localhost:8090/mathdb
